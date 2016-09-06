@@ -27,6 +27,16 @@ API = [
 		'nodes_to_price': ['last']
 	},
 	{
+		'title': 'BitFenix',
+		'url': 'https://api.bitfinex.com/v1/pubticker/BTCUSD',
+		'nodes_to_price': ['last_price']
+	},
+	{
+		'title': 'OKCoin',
+		'url': 'https://www.okcoin.com/api/v1/ticker.do?symbol=btc_usd',
+		'nodes_to_price': ['ticker', 'last']
+	},
+	{
 		'title': 'BTC-e',
 		'url': 'https://btc-e.com/api/2/btc_usd/ticker',
 		'nodes_to_price': ['ticker', 'last']
