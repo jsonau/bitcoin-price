@@ -22,12 +22,12 @@ API = [
 		'nodes_to_price': ['amount']
 	},
 	{
-		'title': 'BitStamp',
+		'title': 'Bitstamp',
 		'url': 'https://www.bitstamp.net/api/ticker/',
 		'nodes_to_price': ['last']
 	},
 	{
-		'title': 'BitFenix',
+		'title': 'Bitfenix',
 		'url': 'https://api.bitfinex.com/v1/pubticker/BTCUSD',
 		'nodes_to_price': ['last_price']
 	},
@@ -41,11 +41,16 @@ API = [
 		'url': 'https://btc-e.com/api/2/btc_usd/ticker',
 		'nodes_to_price': ['ticker', 'last']
 	},
+	{
+		'title': 'itBit',
+		'url': 'https://api.itbit.com/v1/markets/XBTUSD/ticker',
+		'nodes_to_price': ['lastPrice']
+	}
 ]
 
-RESULT_TEMPLATE = " {}: {}"
+RESULT_TEMPLATE = " {}: {:.2f}"
 
 
 for api in API:
 	data = getJSON(api['url'])
-	print RESULT_TEMPLATE.format(api['title'], chain_get(data, api['nodes_to_price']))
+	print RESULT_TEMPLATE.format(api['title'], float(chain_get(data, api['nodes_to_price'])))
